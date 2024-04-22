@@ -7,7 +7,7 @@ if "choosen_topic" not in ss:
     ss["choosen_topic"]=None
 st.title('Music Quiz')
 choosen_topic = ss["choosen_topic"]
-topics= ['Reed', 'Transposing',"Clef","Voice types"]
+topics= ['Reed', 'Transposing',"Clef","Voice types","Piano"]
 topics_selected = st.multiselect('Select topics to be quizzed on:',topics,default=topics)
 new_question = st.button('New question')
 if new_question:

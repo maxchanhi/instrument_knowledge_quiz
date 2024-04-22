@@ -25,11 +25,11 @@ instrument_clef = {
     "vibraphone": "treble clef",
     "glockenspiel": "treble clef",
 
-    "snare drum/ side drum": "percussion clef",
-    "bass drum": "percussion clef",
-    "cymbals":  "percussion clef",
-    "triangle": "percussion clef",
-    "tambourine": "percussion clef",
+    "snare drum/ side drum": "percussion clef (indefinite pitch)",
+    "bass drum":"percussion clef (indefinite pitch)",
+    "cymbals": "percussion clef (indefinite pitch)",
+    "triangle":"percussion clef (indefinite pitch)",
+    "tambourine": "percussion clef (indefinite pitch)"
     }
 instrument_reeds = {
         "flute": "headjoint (non-reed)",
@@ -49,6 +49,6 @@ piano={"Ped.":"Press the right pedal/ sustain pedal.",
        "senza pedale":"Release the right pedal/ sustain pedal.",
        "una corda":"Press the left pedal/ una corda pedal.",
        "tre corda":"Release the left pedal/ una corda pedal.",
-       "mano sinistra(m.s.)":"with left hand",
-       "mano destra(m.d.)":"with right hand"}
-#get the answer from piano
+       "mano sinistra(m.s.)":"Play with left hand",
+       "mano destra(m.d.)":"Play with right hand"}
+

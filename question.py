@@ -1,5 +1,5 @@
 import random
-from data import instrument_clef,instrument_reeds
+from data import instrument_clef,instrument_reeds,piano
 def generate_options(correct,ava_options=list):
     options = [correct]
     while len(options) < 4:
@@ -148,6 +148,28 @@ def voice_types():
     
     random.shuffle(options)  # Shuffle the options to randomize their order in the quiz
     
+    question_data = {
+        "question": question,
+        "options": options,
+        "answer": correct_answer
+    }
+    return question_data
+
+def piano_knowledge():
+    all_key = []
+    all_options = []
+    for key, value in piano.items():
+        all_options.append(value)
+        all_key.append(key)
+    # randomly pick an item in piano
+    correct_question = random.choice(all_key)
+    correct_answer = piano[correct_question]
+    options=[correct_answer]
+    while len(options) < 4:
+        option = random.choice(all_options)
+        if option not in options:
+            options.append(option)
+    question = f"What does {correct_question} mean?"
     question_data = {
         "question": question,
         "options": options,
