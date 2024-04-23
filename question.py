@@ -1,5 +1,5 @@
 import random
-from data import instrument_clef,instrument_reeds,piano
+from data import instrument_clef,instrument_reeds,piano,orniment_url
 def generate_options(correct,ava_options=list):
     options = [correct]
     while len(options) < 4:
@@ -123,7 +123,7 @@ def voice_high_low_options():
     return wrong_list, correct_answer
 
 def voice_types():
-    choosen_topic_list = random.choices(["gender_voice", "voice_range"], weights=[30, 70], k=1)
+    choosen_topic_list = random.choices(["gender_voice", "voice_range"], weights=[3, 7], k=1)
     choosen_topic = choosen_topic_list[0]    #choosen_topic = random.choice(["gender_voice" ,"voice_range"])
     options = []
     if choosen_topic == "gender_voice":
@@ -172,6 +172,32 @@ def piano_knowledge():
     question = f"What does {correct_question} mean?"
     question_data = {
         "question": question,
+        "options": options,
+        "answer": correct_answer
+    }
+    return question_data
+
+def orniments():
+    all_url = []
+    all_options = []
+    for key, value in orniment_url.items():
+        all_url.append(key)
+        all_options.append(value)
+        
+    all_options= list(set(all_options))
+    # randomly pick an item in piano
+    correct_question_url = random.choice(all_url)
+    correct_answer = orniment_url[correct_question_url]
+    options=[correct_answer]
+    while len(options) < 4:
+        option = random.choice(all_options)
+        if option not in options:
+            options.append(option)
+    question = f"What is this orniment?"
+
+    question_data = {
+        "question": question,
+        "pic_url": "static/"+correct_question_url,
         "options": options,
         "answer": correct_answer
     }

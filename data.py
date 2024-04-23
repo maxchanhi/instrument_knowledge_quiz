@@ -52,3 +52,12 @@ piano={"Ped.":"Press the right pedal/ sustain pedal.",
        "mano sinistra(m.s.)":"Play with left hand",
        "mano destra(m.d.)":"Play with right hand"}
 
+orniment_url={"acci_1.png":"Acciaccatura","acci_2.png":"Acciaccatura",
+              "appo_1.png":"Appoggiatura","appo_1.png":"Appoggiatura",
+              "ARPEGGIATION_1.png":"Appeggiation","ARPEGGIATION_2.png":"Appeggiation",
+              "mordent_1.png":"Mordent","mordent_2.png":"Mordent",
+              "trill_1.png":"Trill","trill_2.png":"Trill",
+              "turn_1.png":"Turn","turn_2.png":"Turn","turn_3.png":"Turn"}
+
+
+
