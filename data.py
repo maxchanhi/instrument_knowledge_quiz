@@ -59,5 +59,29 @@ orniment_url={"acci_1.png":"Acciaccatura","acci_2.png":"Acciaccatura",
               "trill_1.png":"Trill","trill_2.png":"Trill",
               "turn_1.png":"Turn","turn_2.png":"Turn","turn_3.png":"Turn"}
 
+playing_technique = {
+    "strings": ["arco", "pizzicato", "legato", "staccato", "marcato", "accent", "con sordino"],
+    "woodwind": ["tonguing", "legato", "staccato", "marcato", "accent"],
+    "brass": ["mute", "tonguing", "legato", "staccato", "marcato", "accent", "con sordino"]
+}
+impossiable_technique = {"strings":["with mallet","tonguing", "beater","pedal"]
+                        ,"woodwind":["with mallet","beater","pedal", "con sordino","with mute","arco", "pizzicato"]
+                        ,"brass":["with mallet","beater","pedal","arco", "pizzicato"]  }
 
 
+fun_emoji_list = [
+    "😂",  # Face with Tears of Joy
+    "🎉",  # Party Popper
+    "🚀",  # Rocket
+    "🐱",  # Cat Face
+    "🐶",  # Dog Face
+    "🦄",  # Unicorn
+    "🎶",  # Musical Notes
+    "😱","👼🏻","💃🏻","🐰","🐒","🐣","🦀","💥","✨","🥳",
+    "🍦",  # Soft Ice Cream
+    "🌟",  # Glowing Star
+    "👻",  # Ghost
+    "🎈",  # Balloon
+    "🎮",  # Video Game
+    "💩"
+]

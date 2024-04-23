@@ -1,6 +1,8 @@
 
 import streamlit as st
 from topics import pick_topic
+from data import fun_emoji_list
+from streamlit_extras.let_it_rain import rain
 import random
 ss=st.session_state
 if "choosen_topic" not in ss:
@@ -31,7 +33,9 @@ def main():
         reed_options = st.radio("Options:", choosen_topic['options'],index=None)
         if st.button('Check Answer'):
             if reed_options == choosen_topic['answer']:
-                st.success("Correct!")
+                fun_emoji = random.choice(fun_emoji_list)
+                st.success(f"Correct!{fun_emoji}")
+                rain(emoji = fun_emoji,animation_length="1")
                 st.balloons()
             else:
                 st.error(f"Wrong! The correct answer is {choosen_topic['answer']}.")
