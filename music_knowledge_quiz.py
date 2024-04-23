@@ -8,33 +8,34 @@ if "choosen_topic" not in ss:
 if "get_url" not in ss:
     ss["get_url"]=None
 st.title('Music Quiz')
-
-topics= ['Reed', 'Transposing',"Clef","Voice types","Piano","Orniments"]
-topics_selected = st.multiselect('Select topics to be quizzed on:',topics,default=topics)
-new_question = st.button('New question')
-if not topics_selected:
-    st.warning('Please select at least one topic.')
-if new_question and topics_selected:
-    test_topic = random.choice(topics_selected)
-    ss["choosen_topic"] = pick_topic(test_topic)
-    choosen_topic = ss["choosen_topic"]
-    if test_topic == "Orniments":
-        ss["get_url"] = ss["choosen_topic"]["pic_url"]
-        get_url = ss["choosen_topic"]["pic_url"]
-    else:
-        ss["get_url"] = None
-    print(choosen_topic,topics_selected)
-
-if ss["choosen_topic"]:
-    choosen_topic = ss["choosen_topic"]
-    st.subheader(choosen_topic['question'])
-    if ss["get_url"]:
-        st.image(ss["get_url"])
-    reed_options = st.radio("Options:", choosen_topic['options'],index=None)
-    if st.button('Check Answer'):
-        if reed_options == choosen_topic['answer']:
-            st.success("Correct!")
+def main():
+    topics= ['Reed', 'Transposing',"Clef","Voice types","Piano","Orniments"]
+    topics_selected = st.multiselect('Select topics to be quizzed on:',topics,default=topics)
+    new_question = st.button('New question')
+    if not topics_selected:
+        st.warning('Please select at least one topic.')
+    if new_question and topics_selected:
+        test_topic = random.choice(topics_selected)
+        ss["choosen_topic"] = pick_topic(test_topic)
+        choosen_topic = ss["choosen_topic"]
+        if test_topic == "Orniments":
+            ss["get_url"] = ss["choosen_topic"]["pic_url"]
         else:
-            st.error(f"Wrong! The correct answer is {choosen_topic['answer']}.")
+            ss["get_url"] = None
+
+    if ss["choosen_topic"]:
+        choosen_topic = ss["choosen_topic"]
+        st.subheader(choosen_topic['question'])
+        if ss["get_url"]:
+            st.image(ss["get_url"])
+        reed_options = st.radio("Options:", choosen_topic['options'],index=None)
+        if st.button('Check Answer'):
+            if reed_options == choosen_topic['answer']:
+                st.success("Correct!")
+                st.balloons()
+            else:
+                st.error(f"Wrong! The correct answer is {choosen_topic['answer']}.")
+if __name__ == '__main__':
+    main()
 
 
