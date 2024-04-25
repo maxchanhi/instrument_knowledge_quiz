@@ -30,7 +30,7 @@ def main():
         st.subheader(choosen_topic['question'])
         if ss["get_url"]:
             st.image(ss["get_url"])
-        reed_options = st.radio("Options:", choosen_topic['options'],index=None)
+        reed_options = st.radio("Options:", choosen_topic['options'])
         if st.button('Check Answer'):
             if reed_options == choosen_topic['answer']:
                 fun_emoji = random.choice(fun_emoji_list)
