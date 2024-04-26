@@ -1,5 +1,5 @@
 import random
-from data import instrument_clef,instrument_reeds,piano,orniment_url
+from data import instrument_clef,instrument_reeds,piano,orniment_url,playing_technique, impossiable_technique,instrumental_families
 def generate_options(correct,ava_options=list):
     options = [correct]
     while len(options) < 4:
@@ -200,5 +200,33 @@ def orniments():
         "pic_url": "static/"+correct_question_url,
         "options": options,
         "answer": correct_answer
+    }
+    return question_data
+
+def instrumental_technique():
+    all_families = []
+    all_options = []
+    for key, value in playing_technique.items():
+        all_families.append(key)
+        all_options.append(value)
+    correct_family = random.choice(all_families)
+    instrument = random.choice(instrumental_families[correct_family])
+    this_technique = random.choice(playing_technique[correct_family])
+    correct_option = f"A {instrument} can perform {this_technique}."
+    options = [] 
+    while len(options) < 4:
+        wrong_family = random.choice(all_families)
+        wrong_instrument = random.choice(instrumental_families[wrong_family])
+        wrong_technique = random.choice(impossiable_technique[wrong_family])
+        wrong_option = f"A {wrong_instrument} can perform {wrong_technique}."
+        if wrong_option not in options:
+            options.append(wrong_option)
+    options.append(correct_option)
+    
+    question = "Which statement is correct?"
+    question_data = {
+        "question": question,
+        "options": options,
+        "answer": correct_option
     }
     return question_data

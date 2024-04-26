@@ -13,7 +13,7 @@ instrument_clef = {
     "harp": "treble and bass clef",
 
     "trumpet": "treble clef",
-    "horn": "treble and bass clef",
+    "horn": "treble or bass clef",
     "trombone": "bass clef",
     "tuba": "bass clef",
     
@@ -58,15 +58,36 @@ orniment_url={"acci_1.png":"Acciaccatura","acci_2.png":"Acciaccatura",
               "mordent_1.png":"Mordent","mordent_2.png":"Mordent",
               "trill_1.png":"Trill","trill_2.png":"Trill",
               "turn_1.png":"Turn","turn_2.png":"Turn","turn_3.png":"Turn"}
-
+### playing techniques
 playing_technique = {
     "strings": ["arco", "pizzicato", "legato", "staccato", "marcato", "accent", "con sordino"],
     "woodwind": ["tonguing", "legato", "staccato", "marcato", "accent"],
-    "brass": ["mute", "tonguing", "legato", "staccato", "marcato", "accent", "con sordino"]
+    "brass": ["mute", "tonguing", "legato", "staccato", "marcato", "accent", "con sordino"],
+    "indefinite pitch membranophones":["staccato", "marcato", "accent", "with mallet/beater"],
+    "definite pitch membranophones":["staccato", "marcato", "accent", "with mallet/beater","pitches"],
+    "definite pitch ideophones":["staccato", "marcato", "accent", "with mallet/beater","pitches","chord","arpeggiation"],
+    "indefinite pitch ideophones":["staccato", "marcato", "accent", "with mallet/beater","pitches"],
+    "keyboard":["staccato", "marcato", "accent", "arpeggiation","with pedal"]
 }
-impossiable_technique = {"strings":["with mallet","tonguing", "beater","pedal"]
-                        ,"woodwind":["with mallet","beater","pedal", "con sordino","with mute","arco", "pizzicato"]
-                        ,"brass":["with mallet","beater","pedal","arco", "pizzicato"]  }
+impossiable_technique = {"strings":["with mallet/beater","tonguing", "beater","pedal"],
+                        "woodwind":["with mallet/beater","with pedal", "con sordino","with mute","arco", "pizzicato","chord"],
+                        "brass":["with mallet/beater","with pedal","arco", "pizzicato","chord"],
+                        "indefinite pitch membranophones":["arco","tonguing","pitches","arpeggiation"],
+                        "definite pitch membranophones":["arco","tonguing", "pizzicato"],
+                        "definite pitch ideophones":["mute","tonguing", "pizzicato","arpeggiation"],
+                        "indefinite pitch ideophones":["tonguing", "pizzicato","arpeggiation","pitches"],
+                        "keyboard":["with mallet/beater","arco"],  }
+
+instrumental_families = {
+    "strings": ["violin", "viola", "cello", "double bass"],
+    "woodwind": ["flute", "piccolo", "oboe", "cor anglais", "clarinet", "bassoon"],
+    "brass": ["trumpet", "trombone", "horn", "tuba"],
+    "keyboard": ["piano", "celesta","harp"],#harp is not keyboard instrument but shares a lot of tech
+    "indefinite pitch membranophones":["snare drum", "bass drum", "tambourine"],
+    "indefinite pitch ideophones":["cymbals", "triangle"],
+    "definite pitch ideophones":["xylophone", "marimba", "vibraphone", "glockenspiel"],
+    "definite pitch membranophones":["timpani"]
+    }
 
 
 fun_emoji_list = [
