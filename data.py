@@ -62,21 +62,21 @@ orniment_url={"acci_1.png":"Acciaccatura","acci_2.png":"Acciaccatura",
 playing_technique = {
     "strings": ["arco", "pizzicato", "legato", "staccato", "marcato", "accent", "con sordino"],
     "woodwind": ["tonguing", "legato", "staccato", "marcato", "accent"],
-    "brass": ["mute", "tonguing", "legato", "staccato", "marcato", "accent", "con sordino"],
-    "indefinite pitch membranophones":["staccato", "marcato", "accent", "with mallet/beater"],
-    "definite pitch membranophones":["staccato", "marcato", "accent", "with mallet/beater","pitches"],
-    "definite pitch ideophones":["staccato", "marcato", "accent", "with mallet/beater","pitches","chord","arpeggiation"],
-    "indefinite pitch ideophones":["staccato", "marcato", "accent", "with mallet/beater","pitches"],
+    "brass": ["a mute", "tonguing", "legato", "staccato", "marcato", "accent", "con sordino"],
+    "indefinite pitch membranophones":["staccato", "marcato", "accent", "with a mallet/beater"],
+    "definite pitch membranophones":["staccato", "marcato", "accent", "with mallets/beaters","pitches"],
+    "definite pitch ideophones":["staccato", "marcato", "accent", "with mallets/beaters","pitches","chord","arpeggiation"],
+    "indefinite pitch ideophones":["staccato", "marcato", "accent", "with a mallet/beater","pitches"],
     "keyboard":["staccato", "marcato", "accent", "arpeggiation","with pedal"]
 }
-impossiable_technique = {"strings":["with mallet/beater","tonguing", "beater","pedal"],
-                        "woodwind":["with mallet/beater","with pedal", "con sordino","with mute","arco", "pizzicato","chord"],
-                        "brass":["with mallet/beater","with pedal","arco", "pizzicato","chord"],
+impossiable_technique = {"strings":["with a mallet/beater","tonguing", "beater","pedal"],
+                        "woodwind":["with a mallet/beater","with pedal", "con sordino","with a mute","arco", "pizzicato","chord"],
+                        "brass":["with a mallet/beater","with pedal","arco", "pizzicato","chord"],
                         "indefinite pitch membranophones":["arco","tonguing","pitches","arpeggiation"],
                         "definite pitch membranophones":["arco","tonguing", "pizzicato"],
-                        "definite pitch ideophones":["mute","tonguing", "pizzicato","arpeggiation"],
+                        "definite pitch ideophones":["a mute","tonguing", "pizzicato","arpeggiation"],
                         "indefinite pitch ideophones":["tonguing", "pizzicato","arpeggiation","pitches"],
-                        "keyboard":["with mallet/beater","arco"],  }
+                        "keyboard":["with a mallet/beater","arco","tonguing", "pizzicato"]  }
 
 instrumental_families = {
     "strings": ["violin", "viola", "cello", "double bass"],
