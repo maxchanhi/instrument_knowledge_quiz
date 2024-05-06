@@ -13,7 +13,7 @@ instrument_clef = {
     "harp": "treble and bass clef",
 
     "trumpet": "treble clef",
-    "horn": "treble or bass clef",
+    "horn": "treble clef",
     "trombone": "bass clef",
     "tuba": "bass clef",
     
