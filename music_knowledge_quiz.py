@@ -19,7 +19,7 @@ if "userpd" not in ss:
 if "pw_visible" not in ss:
     ss["pw_visible"] = True
 
-st.title('Music Quiz')
+st.title('Instrumental Knowledge Quiz')
 
 def password_entered():
     if st.secrets['Password'] == ss['userpd']:
