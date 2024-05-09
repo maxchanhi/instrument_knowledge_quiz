@@ -1,7 +1,7 @@
 from openai import OpenAI
 import os
 
-client = OpenAI(os.environ['OPENAI_API_KEY'])
+client = OpenAI(st.secret['OPENAI_API_KEY'])
 
 
 def provide_feedback(student_result,token=64):
