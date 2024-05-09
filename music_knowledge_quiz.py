@@ -28,7 +28,7 @@ if ss["choosen_topic"]:
     choosen_topic = ss["choosen_topic"]
     st.subheader(choosen_topic['question'])
     if ss["get_url"]:
-        st.image("orchestration"+ss["get_url"])
+        st.image(ss["get_url"])
     reed_options = st.radio("Options:", choosen_topic['options'])
     if st.button('Check Answer'):
         if reed_options == choosen_topic['answer']:
