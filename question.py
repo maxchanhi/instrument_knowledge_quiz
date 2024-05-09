@@ -193,7 +193,7 @@ def orniments():
         option = random.choice(all_options)
         if option not in options:
             options.append(option)
-    question = f"What is this orniment?"
+    question = f"What is this ornament?"
 
     question_data = {
         "question": question,
