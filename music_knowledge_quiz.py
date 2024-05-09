@@ -39,5 +39,3 @@ if ss["choosen_topic"]:
         else:
             st.error(f"Wrong! The correct answer is {choosen_topic['answer']}.")
 
-if __name__ == '__main__':
-    main()
