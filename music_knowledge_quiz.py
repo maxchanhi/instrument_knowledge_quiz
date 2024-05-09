@@ -26,6 +26,7 @@ def password_entered():
         st.write("You now have full access to the feedback!")
         ss["pw_visible"] = False
         ss['userpd'] = ""  # Clear the text input box
+        st.rerun()
     else:
         st.write("You can only preview!")
 
