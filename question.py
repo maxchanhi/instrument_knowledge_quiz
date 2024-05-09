@@ -169,6 +169,7 @@ def piano_knowledge():
         option = random.choice(all_options)
         if option not in options:
             options.append(option)
+    random.shuffle(options)
     question = f"What does {correct_question} mean?"
     question_data = {
         "question": question,
@@ -193,6 +194,7 @@ def orniments():
         option = random.choice(all_options)
         if option not in options:
             options.append(option)
+    random.shuffle(options)
     question = f"What is this ornament?"
 
     question_data = {
@@ -222,7 +224,7 @@ def instrumental_technique():
         if wrong_option not in options:
             options.append(wrong_option)
     options.append(correct_option)
-    
+    random.shuffle(options)
     question = "Which statement is correct?"
     question_data = {
         "question": question,
