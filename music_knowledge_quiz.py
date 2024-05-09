@@ -23,8 +23,9 @@ st.title('Music Quiz')
 
 def password_entered():
     if st.secrets['Password'] == ss['userpd']:
-        st.write("You now have full access to the feedback!")
+        st.success("You now have full access to the feedback!")
         ss["pw_visible"] = False
+        st.rerun()
     else:
         st.write("You can only preview!")
 
