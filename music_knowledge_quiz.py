@@ -24,7 +24,7 @@ if new_question and topics_selected:
         ss["get_url"] = None
 st.write(ss["get_url"])
 if ss["choosen_topic"]:
-    st.subheader(choosen_topic['question'])
+    st.subheader(ss["choosen_topic"]['question'])
     if ss["get_url"]:
         st.image(ss["get_url"])
     reed_options = st.radio("Options:", choosen_topic['options'])
