@@ -17,14 +17,14 @@ if "pressed_kn" not in ss:
 if "userpd" not in ss:
     ss["userpd"] = None
 if "pw_visible" not in ss:
-    ss["pw_visible"] = True
+    ss["pw_visible"] = "visible"
 
 st.title('Music Quiz')
 
 def password_entered():
     if st.secrets['Password'] == ss['userpd']:
         st.success("You now have full access to the feedback!")
-        ss["pw_visible"] = False
+        ss["pw_visible"] = "hidden"
         st.rerun()
     else:
         st.write("You can only preview!")
@@ -62,8 +62,8 @@ def main():
                 st.error(f"Wrong! The correct answer is {choosen_topic['answer']}.")
                 ss["student_ans"].append([choosen_topic['question'], "student answer: " + reed_options, "incorrect"])
             print(ss["student_ans"])
-    if ss["pw_visible"]:
-        ss['userpd'] = st.text_input('Enter your password for full access or find Max for password:', on_change=password_entered)
+    
+    ss['userpd'] = st.text_input('Enter your password for full access or find Max for password:', on_change=password_entered,label_visibility=ss["pw_visible"])
     if len(ss["student_ans"]) > 5:
         if st.button('You can get an AI feedback'):
             with st.spinner("Generating feedback..."):
