@@ -35,5 +35,6 @@ if ss["choosen_topic"]:
             rain(emoji = fun_emoji,animation_length="1")
             st.balloons()
         else:
-            st.error(f"Wrong! The correct answer is {ss["choosen_topic"]['answer']}.")
+            ans =ss["choosen_topic"]['answer']
+            st.error(f"Wrong! The correct answer is {ans}.")
 
