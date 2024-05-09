@@ -72,9 +72,9 @@ def main():
         if st.button('You can get an AI feedback'):
             with st.spinner("Generating feedback..."):
                 if st.secrets['Password'] == ss['userpd']:
-                    feedback = provide_feedback(ss["student_ans"], 128)
+                    feedback = provide_feedback(ss["student_ans"], 256)
                 else:
-                    feedback = provide_feedback(ss["student_ans"], 32)
+                    feedback = provide_feedback(ss["student_ans"], 64)
             st.success(feedback)
             ss["student_ans"] = []
 
