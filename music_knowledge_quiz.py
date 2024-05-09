@@ -29,11 +29,11 @@ if ss["choosen_topic"]:
         st.image(ss["get_url"])
     reed_options = st.radio("Options:", choosen_topic['options'])
     if st.button('Check Answer'):
-        if reed_options == choosen_topic['answer']:
+        if reed_options == ss["choosen_topic"]['answer']:
             fun_emoji = random.choice(fun_emoji_list)
             st.success(f"Correct!{fun_emoji}")
             rain(emoji = fun_emoji,animation_length="1")
             st.balloons()
         else:
-            st.error(f"Wrong! The correct answer is {choosen_topic['answer']}.")
+            st.error(f"Wrong! The correct answer is {ss["choosen_topic"]['answer']}.")
 
