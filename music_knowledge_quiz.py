@@ -56,7 +56,7 @@ def main():
     if len(ss["student_ans"])>5:
         if st.button('You can get an AI feedback'):
             with st.spinner("Generating feedback..."):
-                if os.environ['Password'] == ss['userpd']:
+                if st.secrets['Password'] == ss['userpd']:
                     st.write("You now have full access to the feedback!")
                     feedback = provide_feedback(ss["student_ans"],128)
                     ss["pw_visiable"] = "collapsed"
