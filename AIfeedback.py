@@ -1,7 +1,7 @@
 from openai import OpenAI
 import os
-
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+import streamlit as st
+client = OpenAI(api_key= st.secrets[“OPENAI_API_KEY”])
 
 
 def provide_feedback(student_result,token=64):
