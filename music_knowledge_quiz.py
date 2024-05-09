@@ -52,16 +52,17 @@ def main():
                 ss["student_ans"].append([choosen_topic['question'],"student answer: "+reed_options,"incorrect"])
             print(ss["student_ans"])
     ss['userpd'] = st.text_input('Enter your password for full access or find Max for password:',label_visibility=ss["pw_visiable"])
-    
+    if st.secrets['Password'] == ss['userpd']:
+        st.write("You now have full access to the feedback!")
+        ss["pw_visiable"] = "collapsed"
+    else:
+        st.write("You can only preview!")
     if len(ss["student_ans"])>5:
         if st.button('You can get an AI feedback'):
             with st.spinner("Generating feedback..."):
                 if st.secrets['Password'] == ss['userpd']:
-                    st.write("You now have full access to the feedback!")
                     feedback = provide_feedback(ss["student_ans"],128)
-                    ss["pw_visiable"] = "collapsed"
                 else:
-                    st.write("You can only preview!")
                     feedback = provide_feedback(ss["student_ans"], 32)
             st.success(feedback)
             ss["student_ans"]= []
