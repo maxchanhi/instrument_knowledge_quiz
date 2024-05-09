@@ -26,7 +26,7 @@ def password_entered():
         st.write("You now have full access to the feedback!")
         ss["pw_visible"] = False
         ss['userpd'] = ""  # Clear the text input box
-        st.rerun()
+        st.experimental_rerun()
     else:
         st.write("You can only preview!")
 
@@ -64,7 +64,9 @@ def main():
                 ss["student_ans"].append([choosen_topic['question'], "student answer: " + reed_options, "incorrect"])
             print(ss["student_ans"])
     if ss["pw_visible"]:
-        ss['userpd'] = st.text_input('Enter your password for full access or find Max for password:', value=ss['userpd'], on_change=password_entered)
+        ss['userpd'] = st.text_input('Enter your password for full access or find Max for password:')
+        if st.button('Submit Password'):
+            password_entered()
     if len(ss["student_ans"]) > 5:
         if st.button('You can get an AI feedback'):
             with st.spinner("Generating feedback..."):
