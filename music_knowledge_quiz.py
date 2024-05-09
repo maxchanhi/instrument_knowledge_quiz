@@ -54,7 +54,7 @@ def main():
     ss['userpd'] = st.text_input('Enter your password for full access or find Max for password:',label_visibility=ss["pw_visiable"])
     if st.secrets['Password'] == ss['userpd']:
         st.write("You now have full access to the feedback!")
-        ss["pw_visiable"] = "collapsed"
+        ss["pw_visiable"] = "hidden"
     else:
         st.write("You can only preview!")
     if len(ss["student_ans"])>5:
