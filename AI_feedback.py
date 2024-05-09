@@ -1,8 +1,7 @@
 from openai import OpenAI
 import os
 
-client = OpenAI(os.environ['OPENAI_API_KEY'])
-
+client = OpenAI(st.secrets[“OPENAI_API_KEY”])
 
 def provide_feedback(student_result,token):
     prompt = f"Please provide feedback on the following music theory result:\n\n{student_result}\n\nFeedback:"
