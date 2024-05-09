@@ -16,7 +16,7 @@ if "pressed_kn" not in ss:
     ss["pressed_kn"]=True
 if 'userpd'not in ss:
     ss['userpd']=None
-    ss["pw_visiable"]=True
+    ss["pw_visiable"]="visible"
 st.title('Music Quiz')
 def main():
     topics= ['Reed', 'Transposing',"Clef","Voice types","Piano","Orniments","Inst. technique"]
@@ -59,7 +59,7 @@ def main():
                 if os.environ['Password'] == ss['userpd']:
                     st.write("You now have full access to the feedback!")
                     feedback = provide_feedback(ss["student_ans"],128)
-                    ss["pw_visiable"] = False
+                    ss["pw_visiable"] = "collapsed"
                 else:
                     st.write("You can only preview!")
                     feedback = provide_feedback(ss["student_ans"], 32)
