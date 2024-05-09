@@ -18,11 +18,11 @@ if not topics_selected:
 if new_question and topics_selected:
     test_topic = random.choice(topics_selected)
     ss["choosen_topic"] = pick_topic(test_topic)
-    if test_topic == "Orniments":
+    if test_topic == "Ornaments":
         ss["get_url"] = ss["choosen_topic"]["pic_url"]
     else:
         ss["get_url"] = None
-st.write(ss["get_url"])
+
 if ss["choosen_topic"]:
     st.subheader(ss["choosen_topic"]['question'])
     if ss["get_url"]:
