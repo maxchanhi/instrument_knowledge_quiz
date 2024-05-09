@@ -23,7 +23,7 @@ if new_question and topics_selected:
         ss["get_url"] = ss["choosen_topic"]["pic_url"]
     else:
         ss["get_url"] = None
-print("dir",ss["get_url"])
+st.write(ss["get_url"])
 if ss["choosen_topic"]:
     choosen_topic = ss["choosen_topic"]
     st.subheader(choosen_topic['question'])
