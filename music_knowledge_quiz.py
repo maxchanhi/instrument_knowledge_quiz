@@ -23,7 +23,6 @@ st.title('Music Quiz')
 
 def password_entered():
     if st.secrets['Password'] == ss['userpd']:
-        st.write("You now have full access to the feedback!")
         ss["pw_visible"] = False
         ss['userpd'] = ""  # Clear the text input box
         st.experimental_rerun()
@@ -31,6 +30,8 @@ def password_entered():
         st.write("You can only preview!")
 
 def main():
+    if not ss["pw_visible"]:
+        st.success("You now have full access to the feedback!")
     topics = ['Reed', 'Transposing', "Clef", "Voice types", "Piano", "Ornaments", "Inst. technique"]
     topics_selected = st.multiselect('Select topics to be quizzed on:', topics, default=topics)
     new_question = st.button('New question')
