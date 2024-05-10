@@ -53,8 +53,8 @@ def main():
         st.subheader(choosen_topic['question'])
         if ss["get_url"]:
             st.image(ss["get_url"])
-        
-        reed_options = st.radio("Options:", random.shuffle(choosen_topic['options']))
+        shuffle_op=random.shuffle(choosen_topic['options'])
+        reed_options = st.radio("Options:",shuffle_op )
         if st.button('Check Answer', disabled=ss["pressed_kn"]):
             ss["pressed_kn"] = True
             if reed_options == choosen_topic['answer']:
