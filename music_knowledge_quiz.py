@@ -78,7 +78,7 @@ def main():
                 else:
                     feedback_type = "Limited feedback: "
                     feedback = provide_feedback(ss["student_ans"], 64)
-            st.success(feedback)
+            st.success(f"{feedback_type,feedback}")
             ss["student_ans"] = []
 
 if __name__ == '__main__':
