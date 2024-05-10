@@ -4,7 +4,7 @@ import streamlit as st
 client = OpenAI(api_key= st.secrets['OPENAI_API_KEY'])
 
 
-def provide_feedback(student_result,token=64):
+def provide_feedback(student_result,token):
     prompt = f"Please provide feedback on the following music theory result:\n\n{student_result}\n\nFeedback:"
 
     response = client.chat.completions.create(
@@ -19,6 +19,6 @@ def provide_feedback(student_result,token=64):
         frequency_penalty=0,
         presence_penalty=0
     )
-
+    print(response)
     feedback = response.choices[0].message.content+"..."
     return feedback
