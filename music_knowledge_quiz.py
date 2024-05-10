@@ -10,7 +10,6 @@ if "choosen_topic" not in ss:
     ss["choosen_topic"] = None
     ss["userpd"] = None
     ss["get_url"] = None
-    ss["display_op"] = None
 
 if "student_ans" not in ss:
     ss["student_ans"] = []
@@ -74,7 +73,7 @@ def main():
         if st.button('You can get an AI feedback'):
             with st.spinner("Generating feedback..."):
                 if st.secrets['Password'] == ss['userpd']:
-                    feedback = provide_feedback(ss["student_ans"], 256)
+                    feedback = provide_feedback(ss["student_ans"], 512)
                 else:
                     feedback = provide_feedback(ss["student_ans"], 64)
             st.success(feedback)
