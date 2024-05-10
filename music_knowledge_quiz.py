@@ -10,29 +10,28 @@ if "choosen_topic" not in ss:
     ss["choosen_topic"] = None
     ss["userpd"] = None
     ss["get_url"] = None
-#if "get_url" not in ss:
+
 if "student_ans" not in ss:
     ss["student_ans"] = []
 if "pressed_kn" not in ss:
     ss["pressed_kn"] = True
     ss["pw_visible"] = True
-#if "userpd" not in ss:
     
-#if "pw_visible" not in ss:
-    
-
 st.title('Instrumental Knowledge Quiz')
 
 def password_entered():
     if st.secrets['Password'] == ss['userpd']:
         ss["pw_visible"] = False
-        #st.rerun()
-        #ss['userpd'] = ""  # Clear the text input box
-        
+        ss['userpd'] = "" 
+        st.rerun()# Clear the text input box
     else:
         st.write("You can only preview!")
 
 def main():
+    if ss["pw_visible"]:
+        ss['userpd'] = st.text_input('Enter your password for full access or find Max for password:')
+        if st.button('Submit Password'):
+            password_entered()
     if not ss["pw_visible"]:
         st.success("You now have full access to the feedback!")
     topics = ['Reed', 'Transposing', "Clef", "Voice types", "Piano", "Ornaments", "Inst. technique"]
@@ -67,10 +66,7 @@ def main():
                 st.error(f"Wrong! The correct answer is {choosen_topic['answer']}.")
                 ss["student_ans"].append([choosen_topic['question'], "student answer: " + reed_options, "incorrect"])
             print(ss["student_ans"])
-    if ss["pw_visible"]:
-        ss['userpd'] = st.text_input('Enter your password for full access or find Max for password:')
-        if st.button('Submit Password'):
-            password_entered()
+
     if len(ss["student_ans"]) > 5:
         if st.button('You can get an AI feedback'):
             with st.spinner("Generating feedback..."):
