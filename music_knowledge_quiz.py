@@ -23,7 +23,7 @@ def password_entered():
     if st.secrets['Password'] == ss['userpd']:
         ss["pw_visible"] = False
         ss['userpd'] = "" 
-        st.rerun()# Clear the text input box
+        #st.rerun()
     else:
         st.write("You can only preview!")
 
