@@ -8,23 +8,25 @@ import random
 ss = st.session_state
 if "choosen_topic" not in ss:
     ss["choosen_topic"] = None
-if "get_url" not in ss:
+    ss["userpd"] = None
     ss["get_url"] = None
+#if "get_url" not in ss:
 if "student_ans" not in ss:
     ss["student_ans"] = []
 if "pressed_kn" not in ss:
     ss["pressed_kn"] = True
-if "userpd" not in ss:
-    ss["userpd"] = None
-if "pw_visible" not in ss:
     ss["pw_visible"] = True
+#if "userpd" not in ss:
+    
+#if "pw_visible" not in ss:
+    
 
 st.title('Instrumental Knowledge Quiz')
 
 def password_entered():
     if st.secrets['Password'] == ss['userpd']:
         ss["pw_visible"] = False
-        ss['userpd'] = ""  # Clear the text input box
+        #ss['userpd'] = ""  # Clear the text input box
         st.rerun()
     else:
         st.write("You can only preview!")
