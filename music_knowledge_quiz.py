@@ -22,7 +22,7 @@ st.title('Instrumental Knowledge Quiz')
 def password_entered():
     if st.secrets['Password'] == ss['userpd']:
         ss["pw_visible"] = False
-        ss['userpd'] = "" 
+        ss['userpd'] = True 
         #st.rerun()
     else:
         st.write("You can only preview!")
@@ -72,7 +72,7 @@ def main():
     if len(ss["student_ans"]) > 5:
         if st.button('You can get an AI feedback'):
             with st.spinner("Generating feedback..."):
-                if st.secrets['Password'] == ss['userpd']:
+                if not ss["pw_visible"]:
                     st.write("Full feedback: ")
                     feedback = provide_feedback(ss["student_ans"], 512)
                 else:
