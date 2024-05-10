@@ -10,6 +10,7 @@ if "choosen_topic" not in ss:
     ss["choosen_topic"] = None
     ss["userpd"] = None
     ss["get_url"] = None
+    ss["display_op"] = None
 
 if "student_ans" not in ss:
     ss["student_ans"] = []
@@ -55,9 +56,7 @@ def main():
         st.subheader(choosen_topic['question'])
         if ss["get_url"]:
             st.image(ss["get_url"])
-        options = choosen_topic['options'].copy()
-        random.shuffle(options)
-        reed_options = st.radio("Options:", options)
+        reed_options = st.radio("Options:", choosen_topic['options'])
         if st.button('Check Answer', disabled=ss["pressed_kn"]):
             ss["pressed_kn"] = True
             if reed_options == choosen_topic['answer']:
