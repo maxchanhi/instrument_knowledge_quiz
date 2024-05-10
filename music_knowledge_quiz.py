@@ -73,12 +73,12 @@ def main():
         if st.button('You can get an AI feedback'):
             with st.spinner("Generating feedback..."):
                 if st.secrets['Password'] == ss['userpd']:
-                    feedback_type = "Full feedback: "
+                    st.write("Full feedback: ")
                     feedback = provide_feedback(ss["student_ans"], 512)
                 else:
-                    feedback_type = "Limited feedback: "
+                    st.write("Limited feedback: ")
                     feedback = provide_feedback(ss["student_ans"], 64)
-            st.success(f"{feedback_type,feedback}")
+            st.success(feedback)
             ss["student_ans"] = []
 
 if __name__ == '__main__':
