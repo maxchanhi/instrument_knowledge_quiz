@@ -34,6 +34,8 @@ def main():
             password_entered()
     if not ss["pw_visible"]:
         st.success("You now have full access to the feedback!")
+    if len(ss["student_ans"])==0:
+        st.warning("Tip: You need to answer at least 5 questions to get the AI feedback.")
     topics = ['Reed', 'Transposing', "Clef", "Voice types", "Piano", "Ornaments", "Inst. technique"]
     topics_selected = st.multiselect('Select topics to be quizzed on:', topics, default=topics)
     new_question = st.button('New question')
