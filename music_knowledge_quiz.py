@@ -29,7 +29,7 @@ def password_entered():
 
 def main():
     if ss["pw_visible"]:
-        ss['userpd'] = st.text_input('Enter your password for full access or find Max for password:')
+        ss['userpd'] = st.text_input('Enter your password for full access or find Max for password:',type= "password")
         if st.button('Submit Password'):
             password_entered()
     if not ss["pw_visible"]:
