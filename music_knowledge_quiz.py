@@ -26,7 +26,7 @@ st.title('Instrumental Knowledge Quiz')
 def password_entered():
     if st.secrets['Password'] == ss['userpd']:
         ss["pw_visible"] = False
-        st.rerun()
+        #st.rerun()
         #ss['userpd'] = ""  # Clear the text input box
         
     else:
