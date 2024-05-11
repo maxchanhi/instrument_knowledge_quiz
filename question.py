@@ -220,7 +220,7 @@ def instrumental_technique():
         wrong_family = random.choice(all_families)
         wrong_instrument = random.choice(instrumental_families[wrong_family])
         wrong_technique = random.choice(impossiable_technique[wrong_family])
-        wrong_option = f"A {wrong_instrument} can perform {wrong_technique}."
+        wrong_option = f"A {wrong_instrument} can perform with {wrong_technique}."
         if wrong_option not in options:
             options.append(wrong_option)
     options.append(correct_option)
